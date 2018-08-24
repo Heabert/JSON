@@ -1,14 +1,25 @@
-var userOne=[];
-		axios.get("https://jsonplaceholder.typicode.com/users").then(function(response)
-		users = response.data;
-	let showData="";
-	
-	for(var i=0; i < userOne.length ; i++){
-		showData = showData + "<tr><td>"+users[i].name+"</td> <td>"+users[i].username +"</td><td>"+users[i].email +"</td> </tr>"
 		
+var users=[];
+axios.get("https://jsonplaceholder.typicode.com/users")
+.then(function(response){
+users = response.data;
+let showData="";
+for(var i=0 ; i < users.length ; i++) {
+showData = showData + `<div class="col-md-3">
+
+			<img class="wow hinge" src="assets/imgs/girl.png" alt="girl"> 
+						<div class="card">
+  					<div class="card-body">
+  					${users[i].name} 
+  					${users[i].username}
+  					${users[i].email}
+  				
+    			</div>
+    		</div>`
+}
+document.getElementById("parent").innerHTML = showData;
+});
+
+console.log(parent);
 	
-	
-	}
-	
-	document.getElementById("tabBody").innerHTML= showData;
 	
